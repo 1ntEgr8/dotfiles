@@ -1,2 +1,2 @@
 # dotfiles
-My dotfiles
+My simple config 😎
