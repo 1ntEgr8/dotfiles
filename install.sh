@@ -17,13 +17,10 @@ brew install fish
 # stow ;; to setup the symlinks
 brew install stow
 
-# symlinks
-ln -s ./vim/.vimrc "${BASE_DIR}/.vimrc"
-ln -s ./tmux/.tmux.conf "${BASE_DIR}/.tmux.conf"
-mkdir "${BASE_DIR}/.config"
-ln -s ./fish/.config/omf "${BASE_DIR}/.config/omf" 
-
 # oh-my-fish
 curl -L https://get.oh-my.fish > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
+
+# setting up symlinks
+stow * -v -t ~
 
