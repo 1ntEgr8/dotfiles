@@ -14,6 +14,9 @@ brew install vim
 # fish
 brew install fish
 
+# stow ;; to setup the symlinks
+brew install stow
+
 # symlinks
 ln -s ./vim/.vimrc "${BASE_DIR}/.vimrc"
 ln -s ./tmux/.tmux.conf "${BASE_DIR}/.tmux.conf"
