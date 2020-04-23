@@ -1,0 +1,24 @@
+# == Cursor === #
+cursor:
+  text: '0x000000'
+  cursor: '0x2e7df7'
+
+# === Font Configuration === #
+font:
+  normal:
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+    style: Bold
+  italic:
+    family: Hack
+    style: Italic
+  size: 14.0
+
+# == Key Bindings === #
+key_bindings:
+  - { key: Comma,     mods: Command,      command:
+      {program: "open", args: ["~/.config/alacritty/alacritty.yml"]}     }
+  - { key: N,         mods: Command,      action: SpawnNewInstance       }
+  - { key: Space,     mods: Alt,          chars: " "                     }

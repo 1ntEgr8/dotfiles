@@ -1,26 +1,38 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-BASE_DIR=$HOME
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew --version >/dev/null 2>&1 ||
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
 
-# installing brew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+curr_dir=$(pwd)
+cd "$HOME" || exit
 
-# git
-brew install git
+# installing software
+# TODO
+# make a list of barebones
+# if the os is mac, install brew
 
-# vim
-brew install vim
+chmod +x "$curr_dir/vim/install.sh"
+vim/install.sh
+# install vim/neovim
+# install tmux
+# install brave
+# install bitwarden
+# install rust
+# install golang
+# make a list of complete
 
-# fish
-brew install fish
+# symlinks
+ln -si  "$curr_dir/alacritty/alacritty.yml" "$HOME/.alacritty.yml" && 
+echo "alacritty config linked"
 
-# stow ;; to setup the symlinks
-brew install stow
+ln -si "$curr_dir/tmux/tmux.conf" "$HOME/.tmux.conf" && 
+echo "tmux config linked"
 
-# oh-my-fish
-curl -L https://get.oh-my.fish > install
-fish install --path=~/.local/share/omf --config=~/.config/omf
+ln -si "$curr_dir/vim/.vim" "$HOME/.vim" &&
+ln -si "$curr_dir/vim/.vimrc" "$HOME/.vimrc" &&
+echo "vim config linked"
 
-# setting up symlinks
-stow * -v -t ~
-
+echo "$OSTYPE"
+# install the plugins
