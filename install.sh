@@ -66,7 +66,8 @@ function install_mac_nvim ()
     nvim --version 1>/dev/null || brew install nvim
 
     linking
-    echo "TODO"
+    rm -rf "$HOME/.config/nvim"
+    ln -sF "$cwd/editor/nvim" "$HOME/.config/nvim"
 
     success
 }
@@ -77,7 +78,14 @@ function install_mac_neomutt ()
     neomutt -v 1>/dev/null || brew install neomutt
 
     linking
-    echo "TODO"
+    ln -sF "$cwd/mail/neomutt/neomuttrc" "$HOME/.neomutt/neomuttrc"
+    ln -sF "$cwd/mail/neomutt/colors" "$HOME/.neomutt/colors"
+    ln -sF "$cwd/mail/neomutt/keybindings" "$HOME/.neomutt/keybindings"
+    ln -sF "$cwd/mail/neomutt/mailcap" "$HOME/.neomutt/mailcap"
+    ln -sF "$cwd/mail/neomutt/sidebar" "$HOME/.neomutt/sidebar"
+    ln -sF "$cwd/mail/neomutt/account_setup.example" "$HOME/.neomutt/account_setup.example"
+    rm -rf "$HOME/.neomutt/templates"
+    ln -sF "$cwd/mail/neomutt/templates" "$HOME/.neomutt/templates"
 
     success
 }

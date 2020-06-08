@@ -1,0 +1,23 @@
+set header_cache= "~/.neomutt/hcache"
+set message_cachedir="~/.mutt/messages"
+set certificate_file ="~/.neomutt/certificates"
+set sort = threads
+set mail_check=60
+set send_charset="utf-8"
+set edit_headers
+set ssl_force_tls
+set mailcap_path = "~/.neomutt/mailcap"
+set editor = "vim -c 'source $HOME/.vimrc'" # for some reason, neomutt doesn't load my configs
+set text_flowed
+set wrap=100
+set tmpdir="$HOME/.neomutt/.tmp"
+unset markers
+
+alternative_order multipart/mixed multipart/related text/plain
+mime_lookup application/octet-stream
+auto_view text/html
+
+source "$HOME/.neomutt/keybindings"
+source "$HOME/.neomutt/sidebar"
+source "$HOME/.neomutt/colors"
+source "$HOME/.neomutt/account_setup"

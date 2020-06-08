@@ -1,0 +1,22 @@
+set realname = "TODO"
+set from = "TODO"
+
+set imap_user = "TODO"
+set imap_pass = "TODO"
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+unset record    # gmail automatically saves sent email to "+[Gmail]/Sent"
+set postponed = "+[Gmail]/Drafts"
+set trash = "+[Gmail]/Trash"
+named-mailboxes "gmail" "+INBOX"
+
+set smtp_url = "smtps://$imap_user:$imap_pass@smtp.gmail.com"
+set smtp_authenticators = "login"
+
+macro index,pager I <change-folder>=<tab><enter>
+macro index,pager O <change-folder>=[Gmail]/Sent<tab><enter>
+macro index,pager S <tag-prefix><save-message>=[Gmail]/All<tab><enter>
+macro index,pager A <tag-prefix><change-folder>=[Gmail]/All<tab><enter>
+
+account-hook $folder "set imap_user=$imap_user imap_pass=$imap_pass"
+

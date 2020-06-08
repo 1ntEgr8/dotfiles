@@ -1,0 +1,9 @@
+source "$HOME/.neomutt/accounts/account_1"
+folder-hook "gmail" "source $HOME/.neomutt/accounts/account_1"
+
+source "$HOME/.neomutt/accounts/account_2"
+folder-hook "gatech" "source $HOME/.neomutt/accounts/account_2"
+
+macro index,pager <f1> '<sync-mailbox><enter-command>source $HOME/.neomutt/accounts/account_1<enter><change-folder>!<enter>'
+
+macro index,pager <f2> '<sync-mailbox><enter-command>source $HOME/.neomutt/accounts/account_2<enter><change-folder>!<enter>'
