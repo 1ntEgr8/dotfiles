@@ -1,8 +1,5 @@
 # dotfiles
 
-**Requirements**
-* git
-
 To install
 ```bash
 chmod +x ./install.sh
