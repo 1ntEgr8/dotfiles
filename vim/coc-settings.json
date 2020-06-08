@@ -10,6 +10,17 @@
         "elmTestPath": "elm-test", // optional
         "elmAnalyseTrigger": "change" // optional
       }
-    }
+    },
+    "hdlChecker": {
+            "command": "hdl_checker",
+            "args": [
+                "--lsp"
+            ],
+            "filetypes": [
+                "vhdl",
+                "verilog",
+                "systemverilog"
+            ]
+        }
   }
 }

@@ -7,11 +7,16 @@ call plug#begin('~/.vim/plugged')
     " sidebar
     Plug 'preservim/nerdtree'
 
+    " line numbers
+    Plug 'myusuf3/numbers.vim'
+
     " syntax 
     Plug 'elmcast/elm-vim'
     Plug 'pangloss/vim-javascript'
     Plug 'rust-lang/rust.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'dag/vim-fish'
 
     " syntastic
     " Plug 'vim-syntastic/syntastic' 
@@ -28,7 +33,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " markdown
-    Plug 'junegunn/goyo.vim'
     Plug 'plasticboy/vim-markdown'
 call plug#end()
 
@@ -50,35 +54,13 @@ let mapleader = ','
 map <C-s> :NERDTreeToggle<CR>
 map <leader>s :NERDTreeFind<CR>
 
-" Goyo
-" quit upon :q
-function! s:goyo_enter()
-  " https://github.com/junegunn/goyo.vim/wiki/Customization#ensure-q-to-quit-even-when-goyo-is-active
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
-
-" colors!
 set background=dark
 set termguicolors
 
 colorscheme base16-material-darker
+
+" Makefile
+noremap M :!make <cr>
 
 " general
 syntax on
@@ -94,19 +76,21 @@ set laststatus=2 " for lightline
 let mapleader = ','
 
 " whitespace
-set wrap
 set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
 set backspace=indent,eol,start
 
-" https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-" Wrapping options
-set formatoptions=tc " wrap text and comments using textwidth
-set formatoptions+=r " continue comments when pressing ENTER in I mode
-set formatoptions+=q " enable formatting of comments with gq
-set formatoptions+=n " detect lists for formatting
-set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
-set formatoptions+=w
+" formatting
+set wrap
+set linebreak
+set textwidth=0
+set wrapmargin=0
 
+" quick searches
+set grepprg=rg
+
+" save swap files to temp dir
+set backupdir=$HOME/tmp
+set directory=$HOME/tmp
