@@ -7,7 +7,7 @@ set send_charset="utf-8"
 set edit_headers
 set ssl_force_tls
 set mailcap_path = "~/.neomutt/mailcap"
-set editor = "vim -c 'source $HOME/.vimrc'" # for some reason, neomutt doesn't load my configs
+set editor = "nvim -c 'source $HOME/.config/nvim/init.vim'" # for some reason, neomutt doesn't load my configs
 set text_flowed
 set wrap=100
 set tmpdir="$HOME/.neomutt/.tmp"

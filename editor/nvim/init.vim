@@ -12,10 +12,17 @@ call plug#begin('~/.vim/plugged')
     " syntax 
     Plug 'elmcast/elm-vim'
     Plug 'pangloss/vim-javascript'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'maxmellon/vim-jsx-pretty'
     Plug 'rust-lang/rust.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'dag/vim-fish'
+    Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+    Plug 'mattn/emmet-vim'
+    Plug 'elixir-editors/vim-elixir'
     
     " fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

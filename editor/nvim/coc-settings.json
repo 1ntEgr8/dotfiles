@@ -24,8 +24,10 @@
         }
   },
   "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [ "js", "jsx" ],
   "coc.preferences.formatOnSaveFiletypes": [
     "rust",
-    "dart"
+    "dart",
+    "elixir"
   ]
 }
