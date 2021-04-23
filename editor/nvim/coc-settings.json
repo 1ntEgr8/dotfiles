@@ -1,33 +1,28 @@
 {
-  "languageserver": {
-    "elmLS": {
-      "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
-      "initializationOptions": {
-        "elmPath": "elm", // optional
-        "elmFormatPath": "elm-format", // optional
-        "elmTestPath": "elm-test", // optional
-        "elmAnalyseTrigger": "change" // optional
-      }
-    },
-    "hdlChecker": {
+    "languageserver": {
+        "elmLS": {
+            "command": "elm-language-server",
+            "filetypes": ["elm"],
+            "rootPatterns": ["elm.json"],
+            "initializationOptions": {
+                "elmPath": "elm", // optional
+                "elmFormatPath": "elm-format", // optional
+                "elmTestPath": "elm-test", // optional
+                "elmAnalyseTrigger": "change" // optional
+            }
+        },
+        "hdlChecker": {
             "command": "hdl_checker",
-            "args": [
-                "--lsp"
-            ],
-            "filetypes": [
-                "vhdl",
-                "verilog",
-                "systemverilog"
-            ]
+            "args": ["--lsp"],
+            "filetypes": ["vhdl", "verilog", "systemverilog"]
+        },
+        "ocaml-lsp": {
+            "command": "opam",
+            "args": ["config", "exec", "--", "ocamllsp"],
+            "filetypes": ["ocaml", "reason"]
         }
-  },
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [ "js", "jsx" ],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "rust",
-    "dart",
-    "elixir"
-  ]
+    },
+    "eslint.autoFixOnSave": true,
+    "eslint.filetypes": ["js", "jsx"],
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "dart", "elixir"]
 }

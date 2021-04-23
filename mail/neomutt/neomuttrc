@@ -2,7 +2,6 @@ set header_cache= "~/.neomutt/hcache"
 set message_cachedir="~/.mutt/messages"
 set certificate_file ="~/.neomutt/certificates"
 set sort = threads
-set mail_check=60
 set send_charset="utf-8"
 set edit_headers
 set ssl_force_tls
@@ -11,6 +10,7 @@ set editor = "nvim -c 'source $HOME/.config/nvim/init.vim'" # for some reason, n
 set text_flowed
 set wrap=100
 set tmpdir="$HOME/.neomutt/.tmp"
+set timeout=10
 unset markers
 
 alternative_order multipart/mixed multipart/related text/plain

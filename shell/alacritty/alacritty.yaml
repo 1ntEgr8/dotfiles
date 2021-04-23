@@ -14,7 +14,7 @@ font:
   italic:
     family: Hack
     style: Italic
-  size: 14.0
+  size: 16.0
 
 # == Key Bindings === #
 key_bindings:
@@ -23,40 +23,39 @@ key_bindings:
   - { key: N,         mods: Command,      action: SpawnNewInstance       }
   - { key: Space,     mods: Alt,          chars: " "                     }
 
-# == Colors == #
-# Base16 Material Darker - alacritty color config
-# Nate Peterson
+# Base16 Classic Dark - alacritty color config
+# Jason Heeris (http://heeris.id.au)
 colors:
   # Default colors
   primary:
-    background: '0x212121'
-    foreground: '0xeeffff'
+    background: '0x000000'
+    foreground: '0xd0d0d0'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x212121'
-    cursor: '0xeeffff'
+    text: '0x151515'
+    cursor: '0xd0d0d0'
 
   # Normal colors
   normal:
-    black:   '0x212121'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0xeeffff'
+    black:   '0x151515'
+    red:     '0xac4142'
+    green:   '0x90a959'
+    yellow:  '0xf4bf75'
+    blue:    '0x6a9fb5'
+    magenta: '0xaa759f'
+    cyan:    '0x75b5aa'
+    white:   '0xd0d0d0'
 
   # Bright colors
   bright:
-    black:   '0x4a4a4a'
-    red:     '0xf78c6c'
-    green:   '0x303030'
-    yellow:  '0x353535'
-    blue:    '0xb2ccd6'
-    magenta: '0xeeffff'
-    cyan:    '0xff5370'
-    white:   '0xffffff'
+    black:   '0x505050'
+    red:     '0xd28445'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0x8f5536'
+    white:   '0xf5f5f5'
 
 draw_bold_text_with_bright_colors: false

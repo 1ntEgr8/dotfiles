@@ -192,16 +192,16 @@
         "key": "i"
     },
     "reevaluate-windows": {
-        "mod": "mod1",
-        "key": "z"
+        "mod": "mod2",
+        "key": "i"
     },
     "toggle-focus-follows-mouse": {
         "mod": "mod2",
         "key": "x"
     },
     "relaunch-amethyst": {
-        "mod": "mod2",
-        "key": "z"
+        "mod": "mod1",
+        "key": "o"
     },
     "floating": [],
     "floating-is-blacklist": true,
@@ -217,7 +217,7 @@
     "window-minimum-width": 0,
     "ignore-menu-bar": true,
     "use-canary-build": false,
-    "new-windows-to-main": false,
+    "new-windows-to-main": true,
     "follow-space-thrown-windows": true,
     "send-crash-reports": false,
     "screen-padding-top": 0,
