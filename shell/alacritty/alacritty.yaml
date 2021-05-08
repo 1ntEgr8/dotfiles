@@ -22,3 +22,6 @@ colors:
   # Default colors
   primary:
     background: '0x000000'
+
+  normal:
+    black: '0x000000'
