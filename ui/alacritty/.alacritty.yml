@@ -17,6 +17,8 @@ key_bindings:
       {program: "open", args: ["~/.config/alacritty/alacritty.yml"]}     }
   - { key: N,         mods: Command,      action: SpawnNewInstance       }
   - { key: Space,     mods: Alt,          chars: " "                     }
+  - { key: B, mods: Alt, chars: "\x1bb" }
+  - { key: F, mods: Alt, chars: "\x1bf" }
 
 colors:
   # Default colors
