@@ -1,5 +1,5 @@
 install(){
-  info "FIXME: installing"
+  $app_install amethyst
 }
 
 configure(){

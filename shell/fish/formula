@@ -1,5 +1,5 @@
 install(){
-  info "FIXME: installing"
+  $bin_install fish
 }
 
 configure(){

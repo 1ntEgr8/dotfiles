@@ -1,0 +1,2 @@
+export bin_install="brew install"
+export app_install="brew install --cask"
