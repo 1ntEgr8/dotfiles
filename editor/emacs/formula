@@ -1,9 +1,0 @@
-install(){
-  info "FIXME: installing"
-}
-
-configure(){
-  info "FIXME: configuring"
-}
-
-$@

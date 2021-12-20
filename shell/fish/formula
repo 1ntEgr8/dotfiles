@@ -1,9 +1,0 @@
-install(){
-  $bin_install fish
-}
-
-configure(){
-  info "FIXME: configuring"
-}
-
-$@

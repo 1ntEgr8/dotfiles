@@ -1,9 +1,0 @@
-install(){
-  $app_install amethyst
-}
-
-configure(){
-  info "FIXME: configuring"
-}
-
-$@

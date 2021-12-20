@@ -1,9 +1,0 @@
-install(){
-  $app_install alacritty
-}
-
-configure(){
-  info "FIXME: configuring"
-}
-
-$@
