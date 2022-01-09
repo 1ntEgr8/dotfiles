@@ -36,12 +36,6 @@
   (setq org-roam-directory "~/org/roam")
   (setq org-roam-dailies-directory "daily"))
 
-(use-package perspective
-  :defer t
-  :config
-  (persp-mode)
-  (persp-turn-on-modestring))
-
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -55,6 +49,11 @@
 (use-package flycheck)
 
 (use-package multi-term)
+
+(use-package ido-vertical-mode
+  :init
+  (ido-vertical-mode 1))
+
 
 (setq inhibit-startup-message t)
 (setq default-major-mode 'text-mode)
@@ -73,11 +72,33 @@
 ;; set default font size
 (set-face-attribute 'default nil :height 140)
 
-;; turn on perspective mode
-(persp-mode)
+;; disable tabs for indentation
+(setq-default indent-tabs-mode nil)
 
-;; enable org-roam
+;; show trailing whitespace
+(setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
+
+;; kill whole line with C-k
+(setq kill-whole-line t)
+
+;; display column number in mode line
+(column-number-mode 1)
+
+;; org-roam mode
 (org-roam-db-autosync-mode)
+
+;; ido mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+;; erc
+(setq erc-kill-buffer-on-part t)
+(setq erc-kill-queries-on-quit t)
+(setq erc-kill-server-buffer-on-quit t)
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
 
 ;; hooks
 (defun org-mode-config ()
@@ -96,6 +117,14 @@
 
 ;; key-bindings
 
+;; quick buffer switching
+;; https://emacsredux.com/blog/2013/04/28/switch-to-previous-buffer/
+(defun quick-switch-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(global-set-key (kbd  "C-.") 'quick-switch-previous-buffer)
+
 ;; eval elisp
 (global-set-key (kbd "C-c e") 'eval-expression)
 
@@ -105,6 +134,7 @@
 
 ;; org-mode
 (global-set-key (kbd "C-c a") 'org-agenda-list)
+(global-set-key (kbd "C-c l") 'org-todo-list)
 (global-set-key (kbd "C-c t")
 		'(lambda ()
 		   (interactive)
