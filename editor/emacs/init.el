@@ -16,7 +16,7 @@
 (use-package shell-pop
   :bind (("C-t" . shell-pop))
   :config
-  (setq shell-pop-shell-type 
+  (setq shell-pop-shell-type
 	(quote ("ansi-term" "*ansi-term*"
 		(lambda nil (ansi-term shell-pop-term-shell)))))
   (setq shell-pop-term-shell "fish")
@@ -25,6 +25,23 @@
 (use-package org
   :config
   (setq org-agenda-files '("~/.journal"))
+
+  ;; todo states
+  (setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "IN PROGRESS(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+  (setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "pink" :weight bold)
+              ("IN PROGRESS" :foreground "yellow" :weight bold)
+              ("DONE" :foreground "light green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("HOLD" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "red" :weight bold))))
+
+  ;; agenda view
+  (setq org-agenda-compact-blocks t)
+
+  ;; capture templates
   (setq org-capture-templates
 	'(("t" "todo" entry (file "~/.journal/TODOS.org")
 	   "* TODO %?"))))
@@ -103,7 +120,8 @@
 ;; hooks
 (defun org-mode-config ()
   (visual-line-mode -1)
-  (visual-fill-column-mode -1))
+  (visual-fill-column-mode -1)
+  (auto-revert-mode))
 (add-hook 'org-mode-hook 'org-mode-config)
 
 (defun text-mode-config ()
