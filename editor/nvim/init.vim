@@ -5,6 +5,7 @@ call plug#end()
 
 " general
 syntax off
+set background=light
 set nocompatible
 set incsearch
 set hlsearch
@@ -32,6 +33,9 @@ set grepformat^=%f:%l:%c:%m
 
 " filetype plugin
 filetype plugin on
+
+" create the tmp and undo dirs
+silent !mkdir -p $HOME/tmp/undo > /dev/null 2>&1
 
 " save swap files to temp dir
 set backupdir=$HOME/tmp
