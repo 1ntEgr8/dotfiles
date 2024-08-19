@@ -1,6 +1,6 @@
 " general
-syntax off
 set background=light
+syntax off
 set nocompatible
 set incsearch
 set hlsearch
@@ -59,3 +59,6 @@ noremap [c :cprev<CR>
 noremap ]c :cnext<CR>
 noremap [v :lnext<CR>
 noremap ]v :lprev<CR>
+
+" load lua setup
+lua require("config")
