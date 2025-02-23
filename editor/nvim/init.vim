@@ -7,7 +7,9 @@ set hlsearch
 set visualbell
 set encoding=utf-8
 set autoindent
+set signcolumn=yes
 let mapleader = ','
+let maplocalleader = mapleader
 
 " whitespace
 set tabstop=4
